@@ -1,0 +1,117 @@
+.navBar {
+    background-color: #023E8A;
+    border-radius: 40px;
+}
+
+#logoImage {
+    height: 100px;
+    width: 100px;
+}
+
+.navBarLink {
+    float: right;
+    font-size: 25px;
+    margin-top: 20px;
+    padding: 14px 16px;
+}
+
+.navBarLink > a {
+    color: #CAF0F8;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.navBarLink > a:hover {
+    opacity: 0.7;
+}
+
+body {
+    background-image: url(Assets/mainPhoto2.jpg);
+    background-color: #CAF0F8;
+    background-repeat:no-repeat;
+}
+
+/* Social Media Links Below*/
+.socialLink {
+    display:flex;
+    flex-direction:column;
+    padding-top: 30vh;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 50px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+  
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+    border-radius:50px;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+    border-radius:50px;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+    border-radius:50px;
+}
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+    border-radius:50px;
+}
+
+.homePage {
+    color: #CAF0F8;
+    font-size: 20px;
+    position: absolute;
+    top: 300px;
+    left: 120px;
+    background-color: #023E8A;
+    padding: 10px;
+    border-radius:50px;
+    text-align: center;
+}
+
+.contactForm {
+    position: absolute;
+    right: 60px;
+    top: 200px;
+    background-color: #023E8A;
+    border-radius: 40px;
+    display:flex;
+    flex-direction: column;
+}
+
+.contactForm > input {
+    height: 80px;
+    width: 600px;
+    font-size: 25PX;
+    margin: 20px;
+    background-color: #55ACEE;
+    border-radius: 30px;
+    color: #023E8A;
+}
+
+#messageInput {
+    height: 120PX;
+}
+
+#contactUsBtn {
+    height: 40PX;
+    background-color: #023E8A;
+    color: #55ACEE;
+    border-radius: 30px;
+}
