@@ -21,6 +21,10 @@
     margin-right: 15px;
 }
 
+.navBarLink > a:hover {
+    opacity: 0.7;
+}
+
 .navBarLink > input {
     width: 200px;
     height: 20px;
@@ -84,5 +88,16 @@ body {
     border-radius:50px;
 }
 
+.homePage {
+    color: #CAF0F8;
+    font-size: 20px;
+    position: absolute;
+    top: 200px;
+    left: 120px;
+    background-color: #023E8A;
+    padding: 10px;
+    border-radius:50px;
+    text-align: center;
+}
 
 
