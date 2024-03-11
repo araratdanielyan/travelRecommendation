@@ -1,0 +1,20 @@
+.navBar {
+    background-color: rgb(230, 212, 212);;
+}
+
+#logoImage {
+    height: 150px;
+    width: 150px;
+}
+
+.navBarLink {
+    float: right;
+    font-size: 25px;
+    margin-top: 40px;
+    padding: 14px 16px;
+}
+
+.navBarLink > a {
+    color: rgb(78, 78, 248);
+    text-decoration: none;
+}
