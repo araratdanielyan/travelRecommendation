@@ -1,5 +1,5 @@
 .navBar {
-    background-color: rgb(230, 212, 212);;
+    background-color: #023E8A;
 }
 
 #logoImage {
@@ -15,6 +15,22 @@
 }
 
 .navBarLink > a {
-    color: rgb(78, 78, 248);
+    color: #CAF0F8;
     text-decoration: none;
+    margin-right: 15px;
+}
+
+.navBarLink > input {
+    width: 200px;
+    height: 20px;
+    background-color: #CAF0F8;
+    border-radius: 20px;
+}
+
+#searchButton, #resetButton {
+    border-style: solid;
+    border-radius: 20px;
+    background-color: #CAF0F8;
+    height: 20px;
+    width: 80px;
 }
