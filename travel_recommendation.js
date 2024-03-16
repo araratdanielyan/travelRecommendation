@@ -21,16 +21,22 @@ function addRecommendation(object) {
   
     const currentDiv = document.getElementById("result");
     currentDiv.appendChild(newDiv);
-  }
+}
 
 function getRecommendation(){
-    const input = document.getElementById('userInput').value.toLowerCase();
-    const resultDiv = document.getElementById('result');
 
-        
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
+        let input = document.getElementById('userInput').value.toLowerCase().trim().replace(/,/g,"");
+
+        if(input === "beach" || input === "beaches"){
+            input = "beaches";
+        } else if(input === "temple" || input === "temples"){
+            input = "temples";
+        }else if (input === "country" || input === "countries"){
+            input = "countries";
+        }
 
         if(input === "countries"){
             data.countries.forEach( (el) => {
