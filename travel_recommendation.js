@@ -2,7 +2,7 @@ const searchButton = document.getElementById("searchButton");
 const resetButton = document.getElementById("resetButton");
 let resultArray = [];
 
-function addRecommendation(object) {
+function addRecommendation(object, time) {
     // create a new div element
     const newDiv = document.createElement("div");
 
@@ -14,10 +14,14 @@ function addRecommendation(object) {
 
     const newText = document.createElement("p");
     newText.innerHTML = object.description;
+
+    const newTime = document.createElement("p");
+    newTime.innerHTML = time;
   
     newDiv.appendChild(newPic);
     newDiv.appendChild(newTitle );
     newDiv.appendChild(newText);
+    newDiv.appendChild(newTime);
   
     const currentDiv = document.getElementById("result");
     currentDiv.appendChild(newDiv);
@@ -43,23 +47,43 @@ function getRecommendation(){
                 resultArray.push(el.cities);
             });
 
-            addRecommendation(resultArray[0][0]);
-            addRecommendation(resultArray[1][0]);
+            const optionsOne = { timeZone: "Australia/Sydney", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const sydneyTime = new Date().toLocaleTimeString('en-US', optionsOne);
+
+            const optionsTwo = { timeZone: "Asia/Tokyo", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const tokyoTime = new Date().toLocaleTimeString('en-US', optionsTwo);
+
+            addRecommendation(resultArray[0][0], sydneyTime);
+            addRecommendation(resultArray[1][0], tokyoTime);
+
+
 
         } else if(input === "temples") {
             data.temples.forEach( (el) => {
                 resultArray.push(el);
             });
 
-            addRecommendation(resultArray[0]);
-            addRecommendation(resultArray[1]);
+            const optionsOne = { timeZone: "Australia/Sydney", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const tampleOneTime = new Date().toLocaleTimeString('en-US', optionsOne);
+
+            const optionsTwo = { timeZone: "Australia/Sydney", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const tampleTwoTime = new Date().toLocaleTimeString('en-US', optionsTwo);
+
+            addRecommendation(resultArray[0], tampleOneTime);
+            addRecommendation(resultArray[1], tampleTwoTime);
         } else if(input === "beaches") {
             data.beaches.forEach( (el) => {
                 resultArray.push(el);
             });
 
-            addRecommendation(resultArray[0]);
-            addRecommendation(resultArray[1]);
+            const optionsOne = { timeZone: "Australia/Sydney", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const beachOneTime = new Date().toLocaleTimeString('en-US', optionsOne);
+
+            const optionsTwo = { timeZone: "Australia/Sydney", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            const beachTwoTime = new Date().toLocaleTimeString('en-US', optionsTwo);
+
+            addRecommendation(resultArray[0], optionsOne);
+            addRecommendation(resultArray[1], optionsTwo);
         } else {
             alert("Invalid entry. Please choose from these options: temples, countries, beaches.");
         }
