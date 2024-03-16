@@ -40,26 +40,24 @@ function getRecommendation(){
             addRecommendation(resultArray[0][0]);
             addRecommendation(resultArray[1][0]);
 
+        } else if(input === "temples") {
+            data.temples.forEach( (el) => {
+                resultArray.push(el);
+            });
 
-            console.log(resultArray);
+            addRecommendation(resultArray[0]);
+            addRecommendation(resultArray[1]);
+        } else if(input === "beaches") {
+            data.beaches.forEach( (el) => {
+                resultArray.push(el);
+            });
+
+            addRecommendation(resultArray[0]);
+            addRecommendation(resultArray[1]);
+        } else {
+            alert("Invalid entry. Please choose from these options: temples, countries, beaches.");
         }
         
-        
-        // const condition = data.conditions.find(item => item.name.toLowerCase() === input);
-        // if (condition) {
-        // const symptoms = condition.symptoms.join(', ');
-        // const prevention = condition.prevention.join(', ');
-        // const treatment = condition.treatment;
-
-        // resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-        // resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-        // resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-        // resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-        // resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
-        // } else {
-        // resultDiv.innerHTML = 'Condition not found.';
-        // }
     })
     .catch(error => {
         console.error('Error:', error);
