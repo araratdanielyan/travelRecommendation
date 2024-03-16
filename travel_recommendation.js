@@ -72,4 +72,11 @@ function getRecommendation(){
 
 }
 
+function reset(){
+    resultArray = [];
+    const currentDiv = document.getElementById("result");
+    currentDiv.innerHTML = "";
+}
+
 searchButton.addEventListener("click", getRecommendation);
+resetButton.addEventListener("click", reset);
