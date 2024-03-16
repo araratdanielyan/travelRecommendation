@@ -2,19 +2,25 @@ const searchButton = document.getElementById("searchButton");
 const resetButton = document.getElementById("resetButton");
 let resultArray = [];
 
-function addRecommendation() {
+function addRecommendation(object) {
     // create a new div element
     const newDiv = document.createElement("div");
+
+    const newPic = document.createElement("img");
+    newPic.setAttribute("src", object.imageUrl);
+
+    const newTitle = document.createElement("h3");
+    newTitle.innerHTML = object.name;
+
+    const newText = document.createElement("p");
+    newText.innerHTML = object.description;
   
-    // and give it some content
-    const newContent = document.createTextNode("Hi there and greetings!");
+    newDiv.appendChild(newPic);
+    newDiv.appendChild(newTitle );
+    newDiv.appendChild(newText);
   
-    // add the text node to the newly created div
-    newDiv.appendChild(newContent);
-  
-    // add the newly created element and its content into the DOM
-    const currentDiv = document.getElementById("div1");
-    document.body.insertAfter(newDiv, currentDiv);
+    const currentDiv = document.getElementById("result");
+    currentDiv.appendChild(newDiv);
   }
 
 function getRecommendation(){
@@ -31,6 +37,8 @@ function getRecommendation(){
                 resultArray.push(el.cities);
             });
 
+            addRecommendation(resultArray[0][0]);
+            addRecommendation(resultArray[1][0]);
 
 
             console.log(resultArray);
