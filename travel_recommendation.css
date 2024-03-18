@@ -55,6 +55,7 @@ body {
     display:flex;
     flex-direction:column;
     padding-top: 30vh;
+    width: 50%;
 }
 
 .fa {
@@ -105,5 +106,22 @@ body {
 }
 
 .recommendations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2;
+    position: absolute;
+    right: 50px;
+    top: 130px;
+}
 
+.recommendation_item {
+    background-color: #023E8A;
+    color: #CAF0F8;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.recommendation_item > img{
+    max-height: 150px;
 }

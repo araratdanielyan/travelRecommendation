@@ -5,6 +5,7 @@ let resultArray = [];
 function addRecommendation(object, time) {
     // create a new div element
     const newDiv = document.createElement("div");
+    newDiv.classList.add("recommendation_item");
 
     const newPic = document.createElement("img");
     newPic.setAttribute("src", object.imageUrl);
@@ -82,8 +83,8 @@ function getRecommendation(){
             const optionsTwo = { timeZone: "Australia/Sydney", hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
             const beachTwoTime = new Date().toLocaleTimeString('en-US', optionsTwo);
 
-            addRecommendation(resultArray[0], optionsOne);
-            addRecommendation(resultArray[1], optionsTwo);
+            addRecommendation(resultArray[0], beachOneTime);
+            addRecommendation(resultArray[1], beachTwoTime);
         } else {
             alert("Invalid entry. Please choose from these options: temples, countries, beaches.");
         }
